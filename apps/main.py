@@ -31,10 +31,10 @@ class Post(db.Model):
     __tablename__ = 'PostTable'
     id = db.Column(db.Integer(), primary_key=True)
     title = db.Column(db.String(256))
-    text = db.Column(db.text())
+    text = db.Column(db.Text())
     create_date = db.Column(db.DateTime())
     update_date = db.Column(db.DateTime())
-    user_id = db.Column(db.Integer(), db.ForeignKey('usertable.id'))
+    user_id = db.Column(db.Integer(), db.ForeignKey('UserTable.id'))
     def __init__(self, username):
         self.username = username
     
